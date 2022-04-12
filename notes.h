@@ -1,43 +1,22 @@
 #ifndef NOTES_H
 #define NOTES_H
 
-#include <QMainWindow>
+#include <QDialog>
 
 namespace Ui {
-class notes;
+class Notes;
 }
 
-class notes : public QMainWindow
+class Notes : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit notes(QWidget *parent = nullptr);
-    ~notes();
-
-private slots:
-    void on_actionNew_triggered();
-
-    void on_actionOpen_triggered();
-
-    void on_actionSave_triggered();
-
-    void on_actionSave_as_triggered();
-
-    void on_actionCut_triggered();
-
-    void on_actionCopy_triggered();
-
-    void on_actionPaste_triggered();
-
-    void on_actionRedo_triggered();
-
-    void on_actionUndo_triggered();
-
-    void on_actionAbout_Notepad_triggered();
+    explicit Notes(QWidget *parent = nullptr);
+    ~Notes();
 
 private:
-    Ui::notes *ui;
+    Ui::Notes *ui;
 };
 
 #endif // NOTES_H

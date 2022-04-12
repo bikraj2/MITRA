@@ -32,7 +32,7 @@ private:
     Ui::Dialog1 *ui;
      Dialog2 *profilewindow;
      todo* todo1;
-     notes * noteMaking;
+     Notes * noteMaking;
 };
 
 #endif // DIALOG1_H

@@ -27,8 +27,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color:rgb(86, 16, 33);
-</string>
+    <string notr="true">background-color:#6adfb0;</string>
    </property>
    <property name="title">
     <string/>
@@ -77,18 +76,19 @@ QPushButton:pressed {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>250</x>
       <y>220</y>
-      <width>101</width>
-      <height>20</height>
+      <width>131</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color:rgb(9, 9, 9);
-font: 700 18pt &quot;Palatino&quot;;</string>
+     <string notr="true">color:white;
+font:bold 25px &quot;Sherif&quot;;</string>
     </property>
     <property name="text">
-     <string>Priyanshu</string>
+     <string>Bibhushan
+Saakha</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">

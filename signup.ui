@@ -20,8 +20,8 @@ background-color:rgb(227, 226, 223);</string>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>60</x>
+     <y>20</y>
      <width>83</width>
      <height>29</height>
     </rect>
@@ -36,13 +36,13 @@ background-color:rgb(227, 226, 223);</string>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>130</y>
+     <x>210</x>
+     <y>140</y>
      <width>531</width>
      <height>481</height>
     </rect>
    </property>
-   <layout class="QFormLayout" name="formLayout">
+   <layout class="QFormLayout" name="formLayout_3">
     <item row="1" column="0">
      <widget class="QPushButton" name="pushButton">
       <property name="styleSheet">
@@ -129,7 +129,7 @@ color:rgb(255, 255, 255);</string>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <spacer name="horizontalSpacer_4">
+          <spacer name="horizontalSpacer_9">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -149,7 +149,7 @@ color:rgb(255, 255, 255);</string>
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_5">
+          <spacer name="horizontalSpacer_10">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -164,9 +164,9 @@ color:rgb(255, 255, 255);</string>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
          <item>
-          <spacer name="horizontalSpacer">
+          <spacer name="horizontalSpacer_2">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>
@@ -182,7 +182,7 @@ color:rgb(255, 255, 255);</string>
           <widget class="QLineEdit" name="lineEdit_2"/>
          </item>
          <item>
-          <spacer name="horizontalSpacer_3">
+          <spacer name="horizontalSpacer_11">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
            </property>

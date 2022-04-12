@@ -18,3 +18,9 @@ void todo::on_pushButton_clicked()
     AddNewTask.setModal(true);
     AddNewTask.exec();
 }
+
+void todo::on_pushButton_21_clicked()
+{
+
+}
+

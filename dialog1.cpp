@@ -39,7 +39,7 @@ void Dialog1::on_logouticon_clicked()
 void Dialog1::on_pushButton_2_clicked()
 {
     hide();
-    noteMaking = new notes(this);
+    noteMaking = new Notes(this);
     noteMaking->show();
 }
 

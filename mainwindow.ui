@@ -6,179 +6,224 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>786</width>
-    <height>800</height>
+    <width>315</width>
+    <height>623</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(227, 226, 223);</string>
+   <string notr="true">background-color: #6adfb0;
+border-radius:20px;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>460</y>
-      <width>412</width>
-      <height>48</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_7">
-     <item>
-      <widget class="QLabel" name="name_7">
-       <property name="styleSheet">
-        <string notr="true">border:2px solid gray;border-radius:5px;margin-top: 1ex;
-font: 16pt &quot;Gill Sans MT&quot;;
-background-color:rgb(86, 16, 33);
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true">border:0; font: bold 80px &quot;Sherif&quot;; color:#3d3397;</string>
+      </property>
+      <property name="text">
+       <string>MITRA</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="styleSheet">
+       <string notr="true">border-radius:20px;margin-top: 1ex;
+font: bold 16pt &quot;Sherif&quot;;
+background-color:#3d3397;
 color:rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; color: #111&quot;&gt;Don't have an account?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_singup_3">
-       <property name="styleSheet">
-        <string notr="true">border:2px solid gray;border-radius:5px;margin-top: 1ex;
-font: 14pt &quot;Britannic Bold&quot;;
-background-color:rgb(86, 16, 33);
-color:rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>SignUp</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="name">
-    <property name="geometry">
-     <rect>
-      <x>850</x>
-      <y>100</y>
-      <width>63</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="name_2">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>151</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">image:url(:/icon/icon/MITRA.png);
-color:rgb(252, 231, 125);</string>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>100</y>
-      <width>411</width>
-      <height>351</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:2px solid gray;border-radius:5px;margin-top: 1ex;
-font: 16pt &quot;Gill Sans MT&quot;;
-background-color:rgb(86, 16, 33);
-color:rgb(255, 255, 255);</string>
-    </property>
-    <property name="title">
-     <string>SignIn</string>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_5">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <widget class="QFrame" name="frame">
+         <property name="styleSheet">
+          <string notr="true">border:0;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">border:0; font: bold 40px &quot;Sherif&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Sign In</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>UserName</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="styleSheet">
+              <string notr="true">border:0;</string>
+             </property>
+             <property name="text">
+              <string>UserName</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="username_3">
+             <property name="styleSheet">
+              <string notr="true">background-color:white; border-radius:10px;padding:5; color:black;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QLineEdit" name="username_3"/>
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <item>
+            <widget class="QLabel" name="name_8">
+             <property name="styleSheet">
+              <string notr="true">border:0;</string>
+             </property>
+             <property name="text">
+              <string>Password</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Password_3">
+             <property name="styleSheet">
+              <string notr="true">background-color:white; border-radius:10px; padding:5; color:black;</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
-         <item>
-          <widget class="QLabel" name="name_8">
-           <property name="text">
-            <string>Password</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="Password_3">
-           <property name="echoMode">
-            <enum>QLineEdit::Password</enum>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <layout class="QHBoxLayout" name="horizontalLayout_7"/>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_2">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QFrame" name="frame_3">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QPushButton" name="pushButton_login_3">
+               <property name="styleSheet">
+                <string notr="true">background-color:#dfb06a;
+border-radius: 10px;
+font: 15 Bold &quot;Sherif&quot;; padding:5;</string>
+               </property>
+               <property name="text">
+                <string>Login</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_singup_3">
+               <property name="styleSheet">
+                <string notr="true">background-color:#dfb06a;
+border-radius: 10px;
+font: 15 Bold &quot;Sherif&quot;; padding:5;</string>
+               </property>
+               <property name="text">
+                <string>SignUp</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_login_3">
-       <property name="styleSheet">
-        <string notr="true"/>
-       </property>
-       <property name="text">
-        <string>Login</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>610</y>
-      <width>201</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border:2px solid gray;border-radius:5px;margin-top: 1ex;
-font: 14pt &quot;Britannic Bold&quot;;
-background-color:rgb(86, 16, 33);
-color:rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Forgot Password?</string>
-    </property>
-   </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Forgot Password?</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>786</width>
-     <height>25</height>
+     <width>315</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
