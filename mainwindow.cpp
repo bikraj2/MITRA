@@ -7,15 +7,12 @@
 #include<QtDebug>
 #include<iostream>
 QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
-
+QString username;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    db_conn_open();
-
     setTable();
 
 }
@@ -24,16 +21,15 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
-
 void MainWindow::on_pushButton_login_3_clicked()
 {
-    QString username = ui->username_3->text();
+    username = ui->username_3->text();
     QString password = ui->Password_3->text();
     encrypt(password);
+    connOpen();
     QSqlQuery qry;
-    if(qry.exec("Select * from HI where username= '"+username+"' and password1= '"+password+"'"))
+    qry.prepare("Select * from HI where username= '"+username+"' and password1= '"+password+"'");
+    if(qry.exec())
     {
         int count =0;
         while(qry.next())
@@ -57,6 +53,7 @@ void MainWindow::on_pushButton_login_3_clicked()
     {
         QMessageBox:: warning(this,"hey",qry.lastError().text());
     }
+    connClose();
 }
 void MainWindow::on_pushButton_singup_3_clicked()
 {
@@ -64,30 +61,9 @@ void MainWindow::on_pushButton_singup_3_clicked()
     register1 =  new signup(this);
     register1->show();
 }
-void MainWindow:: db_conn_open()
-{
-
-    QDir data("C:/Db");
-        if (!data.exists())
-        {
-            data.mkpath("C:/Db");
-        }
-        QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
-        info.setDatabaseName("C:/Db/users.db");
-        info.open();
-        if(!info.open())
-        {
-            qDebug() << "hey sorry";
-        }
-
-}
-void MainWindow:: db_conn_close()
-{
-info.close();
-QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
-}
 bool MainWindow :: setTable()
 {
+
     QSqlQuery table1;
     QString qry="Create Table HI"
             "("
