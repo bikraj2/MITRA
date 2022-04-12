@@ -24,6 +24,10 @@
         <file>icon/redo.png</file>
         <file>icon/arrow.png</file>
         <file>icon/info.png</file>
+        <file>icon/backward.png</file>
+        <file>icon/forward.png</file>
+        <file>icon/Play.png</file>
+        <file>icon/logo.png</file>
     </qresource>
     <qresource prefix="/new/prefix1"/>
     <qresource prefix="/database">

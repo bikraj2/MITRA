@@ -21,11 +21,16 @@ border-radius:20px;</string>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QLabel" name="label_2">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
-       <string notr="true">border:0; font: bold 80px &quot;Sherif&quot;; color:#3d3397;</string>
+       <string notr="true"> font: bold 100px &quot;Sherif&quot;; color:#2F455C;
+image:url(:/icon/icon/logo.png);
+</string>
       </property>
       <property name="text">
-       <string>MITRA</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -34,7 +39,7 @@ border-radius:20px;</string>
       <property name="styleSheet">
        <string notr="true">border-radius:20px;margin-top: 1ex;
 font: bold 16pt &quot;Sherif&quot;;
-background-color:#3d3397;
+background-color:#2f455c;
 color:rgb(255, 255, 255);</string>
       </property>
       <property name="title">
@@ -69,7 +74,9 @@ color:rgb(255, 255, 255);</string>
           <item>
            <widget class="QLabel" name="label">
             <property name="styleSheet">
-             <string notr="true">border:0; font: bold 40px &quot;Sherif&quot;;</string>
+             <string notr="true">border:0; ;
+font: 40pt &quot;Bodoni 72 &quot;;
+color:#e6873c;</string>
             </property>
             <property name="text">
              <string>Sign In</string>
@@ -99,10 +106,11 @@ color:rgb(255, 255, 255);</string>
            <item>
             <widget class="QLabel" name="label_3">
              <property name="styleSheet">
-              <string notr="true">border:0;</string>
+              <string notr="true">border:0;
+font: 15pt ;</string>
              </property>
              <property name="text">
-              <string>UserName</string>
+              <string>Username</string>
              </property>
             </widget>
            </item>
@@ -120,7 +128,8 @@ color:rgb(255, 255, 255);</string>
            <item>
             <widget class="QLabel" name="name_8">
              <property name="styleSheet">
-              <string notr="true">border:0;</string>
+              <string notr="true">border:0;
+font: 15pt ;</string>
              </property>
              <property name="text">
               <string>Password</string>
@@ -165,9 +174,10 @@ color:rgb(255, 255, 255);</string>
              <item>
               <widget class="QPushButton" name="pushButton_login_3">
                <property name="styleSheet">
-                <string notr="true">background-color:#dfb06a;
+                <string notr="true">background-color:#e68736;
 border-radius: 10px;
-font: 15 Bold &quot;Sherif&quot;; padding:5;</string>
+; padding:5;
+font: 18pt ;</string>
                </property>
                <property name="text">
                 <string>Login</string>
@@ -177,9 +187,10 @@ font: 15 Bold &quot;Sherif&quot;; padding:5;</string>
              <item>
               <widget class="QPushButton" name="pushButton_singup_3">
                <property name="styleSheet">
-                <string notr="true">background-color:#dfb06a;
+                <string notr="true">background-color:#e6873c;
 border-radius: 10px;
-font: 15 Bold &quot;Sherif&quot;; padding:5;</string>
+font: 17pt  ; padding:5;
+</string>
                </property>
                <property name="text">
                 <string>SignUp</string>
