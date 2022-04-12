@@ -23,6 +23,7 @@ MainWindow::~MainWindow()
 }
 void MainWindow::on_pushButton_login_3_clicked()
 {
+    MainWindow conn;
     username = ui->username_3->text();
     QString password = ui->Password_3->text();
     encrypt(password);
