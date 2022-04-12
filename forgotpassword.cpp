@@ -2,6 +2,7 @@
 #include "ui_forgotpassword.h"
 #include<QtSql>
 #include<QMessageBox>
+#include"mainwindow.h"
 QString  username2,DOB,nickname;
 ForgotPassword::ForgotPassword(QWidget *parent) :
     QDialog(parent),
@@ -19,7 +20,8 @@ ForgotPassword::~ForgotPassword()
 void ForgotPassword::on_pushButton_clicked()
 {
 
-
+    MainWindow conn;
+    conn.connOpen();
     username2=ui->username3->text();
     DOB=ui->DOB->text();
     nickname=ui->Nickname->text();
@@ -43,7 +45,7 @@ void ForgotPassword::on_pushButton_clicked()
               QMessageBox:: warning(this,"Incorrect Credentials","The details you entered donot match.");
         }
     }
-
+conn.connClose();
 }
 
 
