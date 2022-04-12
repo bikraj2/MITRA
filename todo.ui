@@ -799,6 +799,26 @@ border-radius: 15px; padding:6;</string>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
+     <widget class="QPushButton" name="pushButton_26">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>40</y>
+        <width>173</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #dfb06a;
+color:#3d3397;
+font: bold 20px,  &quot;Sherif&quot; ; 
+border-width: 5px;
+border-radius: 15px; padding:6;</string>
+      </property>
+      <property name="text">
+       <string>Close</string>
+      </property>
+     </widget>
     </widget>
    </item>
   </layout>

@@ -18,7 +18,8 @@ SOURCES += \
     notes.cpp \
     signup.cpp\
     taskadder.cpp \
-    todo.cpp
+    todo.cpp\
+    syllabus.cpp
 
 HEADERS += \
     change_password.h \
@@ -29,7 +30,8 @@ HEADERS += \
     notes.h \
     signup.h\
     taskadder.h \
-    todo.h
+    todo.h\
+    syllabus.h
 
 FORMS += \
     change_password.ui \
@@ -40,7 +42,8 @@ FORMS += \
     notes.ui \
     signup.ui\
     taskadder.ui \
-    todo.ui
+    todo.ui\
+    syllabus.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
