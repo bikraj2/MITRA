@@ -6,18 +6,44 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>663</width>
+    <height>377</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QPushButton" name="Pomodoro_backButton">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>40</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="timerButton">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>40</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Go to Timer</string>
+   </property>
+  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>100</y>
+     <x>50</x>
+     <y>160</y>
      <width>301</width>
      <height>121</height>
     </rect>
@@ -26,14 +52,14 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="StartButton">
+       <widget class="QPushButton" name="music_startButton">
         <property name="text">
          <string>Start</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="StopButton">
+       <widget class="QPushButton" name="music_stopButton">
         <property name="text">
          <string>Stop</string>
         </property>

@@ -5,6 +5,7 @@
 #include"dialog2.h"
 #include "todo.h"
 #include"notes.h"
+#include"music.h"
 namespace Ui {
 class Dialog1;
 }
@@ -27,12 +28,14 @@ private slots:
     void on_logouticon_clicked();
 
     void on_pushButton_2_clicked();
+    void on_pushButton_clicked();
 
 private:
     Ui::Dialog1 *ui;
      Dialog2 *profilewindow;
      todo* todo1;
      notes * noteMaking;
+     music * studyMusic;
 };
 
 #endif // DIALOG1_H
