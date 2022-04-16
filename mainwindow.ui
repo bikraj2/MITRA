@@ -221,6 +221,9 @@ font: 17pt  ; padding:5;
     </item>
     <item>
      <widget class="QPushButton" name="pushButton">
+      <property name="styleSheet">
+       <string notr="true">color:#2f455c; font: 18px &quot;Sherif&quot;;</string>
+      </property>
       <property name="text">
        <string>Forgot Password?</string>
       </property>

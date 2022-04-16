@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>326</height>
+    <width>493</width>
+    <height>483</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -167,6 +167,20 @@
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="styleSheet">
+            <string notr="true">background-color: #dfb06a;
+color:#3d3397;
+font: bold 20px,  &quot;Sherif&quot; ; 
+border-width: 5px;
+border-radius: 15px; padding:6;</string>
+           </property>
+           <property name="text">
+            <string>Done</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="pushButton">
            <property name="styleSheet">
             <string notr="true">background-color: #dfb06a;
@@ -176,7 +190,7 @@ border-width: 5px;
 border-radius: 15px; padding:6;</string>
            </property>
            <property name="text">
-            <string>Back</string>
+            <string>Cancel</string>
            </property>
           </widget>
          </item>
