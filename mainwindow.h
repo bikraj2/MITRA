@@ -27,7 +27,7 @@ public:
                     data.mkpath("C:/Db");
                 }
                 db  =  QSqlDatabase::addDatabase("QSQLITE");
-                db.setDatabaseName("C:/Db/users.db");
+                db.setDatabaseName("C:/Db/todo.db");
                 db.open();
                 if(!db.open())
                 {
