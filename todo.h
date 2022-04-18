@@ -13,6 +13,9 @@ class todo : public QDialog
     Q_OBJECT
 
 public:
+    static int pos1;
+    static int pos2;
+    static int pos3;
     explicit todo(QWidget *parent = nullptr);
 
 
@@ -21,17 +24,20 @@ public slots:
 
 
 private slots:
-
     void on_pushButton_clicked();
 
     void on_pushButton_21_clicked();
 
     void on_pushButton_26_clicked();
 
-    void on_pushButton_27_clicked();
-
+   bool on_pushButton_27_clicked();
+   void load_not_started();
+   void load_in_progress();
+   void load_completed();
 private:
     Ui::todo *ui;
 };
+
+
 
 #endif // TODO_H

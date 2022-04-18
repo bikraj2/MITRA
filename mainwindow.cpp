@@ -7,7 +7,7 @@
 #include<QtDebug>
 #include<iostream>
 QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
-
+QString username;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -29,7 +29,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_login_3_clicked()
 {
-    QString username = ui->username_3->text();
+ username = ui->username_3->text();
     QString password = ui->Password_3->text();
     encrypt(password);
     QSqlQuery qry;

@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+     void  db_conn_open();
 private slots:
 
 
@@ -24,7 +24,7 @@ private slots:
     void on_pushButton_login_3_clicked();
 
     void on_pushButton_singup_3_clicked();
-    void  db_conn_open();
+
     bool setTable();
     void encrypt(QString &string_encrypt);
 

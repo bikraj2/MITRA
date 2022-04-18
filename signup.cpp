@@ -16,7 +16,7 @@ signup::~signup()
     delete ui;
 }
 
-bool signup::on_pushButton_clicked()
+void signup::on_pushButton_clicked()
 {
     QString full_name,nickname,email,username,password,date;
     full_name=ui->lineEdit->text();
@@ -27,7 +27,7 @@ bool signup::on_pushButton_clicked()
     if(full_name=="" || nickname ==""||username==""||password==""||date=="")
     {
         QMessageBox::warning(this,"Incomplete information","Make sure you have entered all the fields.");
-        return 0;
+
     }
     QRegularExpression username_pattern("^[a-zA-Z0-9_-]{5,10}$");//only includes alphabets or digits or underscore or hyphen; 5 to 10 characters
     QRegularExpressionMatch username_is_valid = username_pattern.match(username);
@@ -44,19 +44,23 @@ bool signup::on_pushButton_clicked()
             {
                 loop+=1;
 
-            }
+            }00
           if(loop>=1)
             {
                 QMessageBox::warning(this,"User already registered!","Please try a different username.");
-                return 0;
             }
         }
         encrypt(password);
-        QSqlQuery qry;
-        qry.exec("Insert into HI (full_name,nickname,username,password1,DOB) values('"+full_name+"','"+nickname+"','"+username+"','"+password+"','"+date+"')");
+        QSqlQuery qry,not_started,on_going,completed;
+        qry.prepare("Insert into HI (full_name,nickname,username,password1,DOB) values('"+full_name+"','"+nickname+"','"+username+"','"+password+"','"+date+"')");
         if(qry.exec())
         {
 
+
+            QString not_started_qry="Create Table '"+username+"_not_started'(taskname varchar(100))",on_going_qry="Create Table '"+username+"_on_going'(taskname varchar(100))",completed_qry="Create Table '"+username+"_completed' (taskname varchar(100))";
+            not_started.exec(not_started_qry);
+            on_going.exec(on_going_qry);
+            completed.exec(completed_qry);
             QMessageBox::information(this,"User Registered","You have been registered.");
             this->hide();
             QWidget *parent = this->parentWidget();
