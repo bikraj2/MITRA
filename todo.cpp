@@ -8,6 +8,7 @@ todo::todo(QWidget *parent) :
     ui(new Ui::todo)
 {
     ui->setupUi(this);
+
 }
 
 todo::~todo()
@@ -40,8 +41,6 @@ void todo::on_pushButton_27_clicked()
 
     static int pos1=0,pos2=0;
     pos1++;
-    QScrollArea *hello = new QScrollArea;
-    QWidget * hi = new QWidget;
     QGridLayout* not_started = ui->not_started;
     QHBoxLayout* taskname = new (QHBoxLayout);
     QLabel * title = new (QLabel);
@@ -54,15 +53,18 @@ void todo::on_pushButton_27_clicked()
     title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
     details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
     not_started->addLayout(taskname,pos1,pos2);
-   hi->setLayout(not_started);
-   hello->setWidget(hi);
+
 }
-/*QString todo :: taskadder(QString & name)
+/*void todo :: taskadder(QString & name)
 {
-    QWidget * taskadder = new QWidget;
-    QFormLayout * form = new QFormLayout;
-    QLineEdit * taskName= new QLineEdit;
-    QPushButton * add = new QPushButton;
+    QWidget * taskadder;
+    QFormLayout * form ;
+    QLineEdit * taskName;
+    QPushButton * add ;
     add->setText("Details");
-    connect( add,&QPushButton::clicked,this;
+    form->addWidget(taskName);
+    form->addWidget(add);
+    taskadder->setLayout(form);
+    taskadder->show();
+
 }*/

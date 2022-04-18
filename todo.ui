@@ -89,6 +89,18 @@ color:#3d3397;</string>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QFrame" name="frame_7">
+        <property name="minimumSize">
+         <size>
+          <width>500</width>
+          <height>500</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>500</height>
+         </size>
+        </property>
         <property name="styleSheet">
          <string notr="true">background-color: #3d3397;border-radius:30;</string>
         </property>
@@ -168,9 +180,6 @@ font: bold large &quot;Sherif&quot;;</string>
             </item>
             <item>
              <widget class="QScrollBar" name="verticalScrollBar">
-              <property name="styleSheet">
-               <string notr="true">background-color:#dfb06a; color:#2f455c;</string>
-              </property>
               <property name="orientation">
                <enum>Qt::Vertical</enum>
               </property>
@@ -181,6 +190,12 @@ font: bold large &quot;Sherif&quot;;</string>
          </item>
          <item>
           <widget class="QFrame" name="frame_20">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -196,11 +211,7 @@ font: bold large &quot;Sherif&quot;;</string>
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_24">
-               <item>
-                <layout class="QFormLayout" name="formLayout_2"/>
-               </item>
-              </layout>
+              <layout class="QHBoxLayout" name="horizontalLayout_24"/>
              </widget>
             </item>
            </layout>
