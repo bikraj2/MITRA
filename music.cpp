@@ -31,7 +31,7 @@ void music::on_music_startButton_clicked() // for music
     // load and play the file
 
 
-        player->setSource(QUrl::fromLocalFile("C:/Users/Lenovo/OneDrive/Documents/TEMP2-main/songs/moonlight.mp3"));
+        player->setSource(QUrl::fromLocalFile("qrc:/studymusic/studymusic/s4.mp3"));
 
         player->play();
         qDebug()<< player->errorString();

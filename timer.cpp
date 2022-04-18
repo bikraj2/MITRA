@@ -88,3 +88,11 @@ void timer::reset(){
 }
 
 
+
+void timer::on_pushButton_clicked()
+{
+    this->hide();
+    QWidget * parent  = this->parentWidget();
+    parent->show();
+}
+
