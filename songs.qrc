@@ -1,11 +1,11 @@
 <RCC>
     <qresource prefix="/studymusic">
-        <file>studymusic/s1.mp3</file>
-        <file>studymusic/s2.mp3</file>
-        <file>studymusic/s3.mp3</file>
-        <file>studymusic/s4.mp3</file>
-        <file>studymusic/s5.mp3</file>
-        <file>studymusic/s6.mp3</file>
-        <file>studymusic/s7.mp3</file>
+        <file>songs/s3.mp3</file>
+        <file>songs/s1.mp3</file>
+        <file>songs/s2.mp3</file>
+        <file>songs/s4.mp3</file>
+        <file>songs/s5.mp3</file>
+        <file>songs/s6.mp3</file>
+        <file>songs/s7.mp3</file>
     </qresource>
 </RCC>
