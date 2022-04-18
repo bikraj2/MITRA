@@ -19,3 +19,8 @@ void syllabus::on_pushButton_clicked()
     hide();
 }
 
+
+
+
+
+
