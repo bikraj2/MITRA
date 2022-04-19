@@ -13,7 +13,7 @@ todo::todo(QWidget *parent) :
     MainWindow x;
     x.db_conn_open();
     load_not_started();
-
+    load_in_progress();
 }
 
 todo::~todo()
@@ -37,7 +37,9 @@ void todo::on_pushButton_21_clicked()
 
 void todo::on_pushButton_26_clicked()
 {
+    QWidget * parent1 =this->parentWidget();
     hide();
+    parent1->show();
 }
 
 
@@ -66,8 +68,6 @@ bool todo::on_pushButton_27_clicked()
              return false;
          }
     }
-
-
     QString query="INSERT into  '"+table_name+"' (taskname) VALUES ('"+task+"')";
     qry.prepare(query);
     if(qry.exec())
@@ -97,6 +97,39 @@ bool todo::on_pushButton_27_clicked()
     details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
     not_started->addLayout(taskname,pos1,0);
     ui->task_adder->setText("");
+    connect(details,&QPushButton::clicked,[=](){
+        QString table_name_not_started=username+"_not_started";
+        QString table_name_on_going=username+"_on_going";
+        QSqlQuery delete_;
+        QString delete_qry="Delete from '"+table_name_not_started+"' where taskname='"+task+"'";
+        QSqlQuery insert;
+        QString insert_qry="INSERT INTO '"+table_name_on_going+"' (taskname) values ('"+task+"')";
+        if(delete_.exec(delete_qry))
+        {
+            qDebug()<<"Deleted my g";
+        }
+        else
+        {
+            qDebug()<<"NOt delered"+delete_.lastError().text();
+        }
+
+        if(insert.exec(insert_qry))
+        {
+            if(delete_.exec(delete_qry))
+            {
+                qDebug()<<"Insert";
+                pos1=0;
+                pos2=0;
+                load_not_started();
+                load_in_progress();
+            }
+        }
+                else
+        {
+                qDebug()<<"Not inserted";
+        }
+    });
+
     return true;
 }
 
@@ -140,11 +173,11 @@ void todo::load_not_started()
 void todo::load_in_progress()
 {
     extern QString username;
-    QString table_name=username+"_not_started";
-    pos1++;
+    QString table_name=username+"_on_going";
+    pos2++;
     QGridLayout* not_started = ui->on_going_2;
     QWidget * widgets = new QWidget;
-    QScrollArea * area = ui->not_started;
+    QScrollArea * area = ui->on_going;
     widgets->setLayout(not_started);
     area->setWidget(widgets);
 
@@ -167,9 +200,9 @@ void todo::load_in_progress()
                taskname->addWidget(details,1);
                title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
                details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
-               not_started->addLayout(taskname,pos1,0);
+               not_started->addLayout(taskname,pos2,0);
                ui->task_adder->setText("");
-               pos1+=1;
+               pos2+=1;
 }
 }
 }

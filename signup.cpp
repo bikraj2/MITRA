@@ -44,7 +44,7 @@ void signup::on_pushButton_clicked()
             {
                 loop+=1;
 
-            }00
+            }
           if(loop>=1)
             {
                 QMessageBox::warning(this,"User already registered!","Please try a different username.");
