@@ -6,12 +6,21 @@
 #include<QAudioOutput>
 #include<QDebug>
 #include<timer.h>
+#include<QAbstractSlider>
+#include<QToolButton>
+#include<QStyle>
+#include<QSlider>
 
 
+QT_BEGIN_NAMESPACE
+class QMediaPlayer;
+QT_END_NAMESPACE
 
-namespace Ui {
+namespace Ui
+{
 
 class music;
+
 }
 
 class music : public QDialog
@@ -22,22 +31,26 @@ public:
     explicit music(QWidget *parent = nullptr);
     ~music();
 
-
+signals:
+    void stop();
+    void next();
+    void previous();
 
 private slots:
-    void on_music_startButton_clicked();
+    void on_startButton_clicked();
 
-    void on_music_stopButton_clicked();
+    void on_stopButton_clicked();
     void on_Pomodoro_backButton_clicked();
 
-    void on_sliderVolume_sliderMoved(int position);
+    void on_sliderVolume_valueChanged(int duration);
 
-    void on_sliderProgress_sliderMoved(int position);
+   // void on_sliderProgress_sliderMoved(int position);
 
 
-    void on_durationChanged(qint64 position);
-    void on_positionChanged(qint64 position);
+    //void on_durationChanged(qint64 position);
+    //void on_positionChanged(qint64 position);
 
+    float volume() const;
 
 
 
@@ -51,6 +64,7 @@ private slots:
 
     void on_timerButton_clicked();
 
+
 private:
 
 
@@ -58,6 +72,14 @@ private:
     QMediaPlayer *player;
     QAudioOutput *audio;
     timer *timerwindow;
+    QAbstractSlider *sliderVolume = nullptr;
+    QAbstractButton *playButton = nullptr;
+    QAbstractButton *stopButton = nullptr;
+    QAbstractButton *nextButton = nullptr;
+    QAbstractButton *previousButton = nullptr;
+    QAbstractButton *muteButton = nullptr;
+
+
 
 
 };
