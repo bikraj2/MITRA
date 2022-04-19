@@ -206,6 +206,7 @@ void todo:: load_completed()
                not_started->addLayout(taskname,pos1,0);
                ui->task_adder->setText("");
                pos1+=1;
+               CONNECT();
 }
 }
 }
