@@ -170,6 +170,8 @@ void music::on_timerButton_clicked()
     timerwindow->show();
 }
 
+void music:: on
+
 
 
 
