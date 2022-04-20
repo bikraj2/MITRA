@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>80</width>
+     <x>350</x>
+     <y>0</y>
+     <width>41</width>
      <height>24</height>
     </rect>
    </property>

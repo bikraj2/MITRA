@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="Pomodoro_backButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>30</y>
+     <x>10</x>
+     <y>10</y>
      <width>80</width>
      <height>24</height>
     </rect>
@@ -30,7 +30,8 @@
    </property>
    <property name="styleSheet">
     <string notr="true">
-image:url(:/icon/icon/arrow-left-solid.png)</string>
+image:url(:/icon/icon/home.png);
+background-color:rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string/>
@@ -39,8 +40,8 @@ image:url(:/icon/icon/arrow-left-solid.png)</string>
   <widget class="QPushButton" name="timerButton">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>60</y>
+     <x>490</x>
+     <y>10</y>
      <width>161</width>
      <height>141</height>
     </rect>

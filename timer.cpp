@@ -12,7 +12,9 @@ timer::timer(QWidget *parent) :
     // buttons
     startButton = new QPushButton(this);
     startButton->setText("Start");
-    startButton->setGeometry(10,10,17,17);
+    startButton->setGeometry(20,20,80,24);
+
+    startButton->setStyleSheet("background-color:red;color:rgb(255,255,255)");
     connect(startButton,SIGNAL(clicked()),this,SLOT(start()));
 
     resetButton = new QPushButton(this);
