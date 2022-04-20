@@ -16,7 +16,7 @@ signup::~signup()
     delete ui;
 }
 
-void signup::on_pushButton_clicked()
+bool signup::on_pushButton_clicked()
 {
     QString full_name,nickname,email,username,password,date;
     full_name=ui->lineEdit->text();
@@ -37,7 +37,7 @@ void signup::on_pushButton_clicked()
     if(password_is_valid.hasMatch()&&username_is_valid.hasMatch())
     {
         QSqlQuery qry1;
-        if(qry1.exec("Select * from HI where username='"+username+"'"))
+        if(qry1.exec("Select * from users where username='"+username+"'"))
         {
             int loop=0;
             while (qry1.next())
@@ -48,11 +48,12 @@ void signup::on_pushButton_clicked()
           if(loop>=1)
             {
                 QMessageBox::warning(this,"User already registered!","Please try a different username.");
+                return true;
             }
         }
         encrypt(password);
         QSqlQuery qry,not_started,on_going,completed;
-        qry.prepare("Insert into HI (full_name,nickname,username,password1,DOB) values('"+full_name+"','"+nickname+"','"+username+"','"+password+"','"+date+"')");
+        qry.prepare("Insert into users (full_name,nickname,username,password1,DOB) values('"+full_name+"','"+nickname+"','"+username+"','"+password+"','"+date+"')");
         if(qry.exec())
         {
 
@@ -75,6 +76,7 @@ void signup::on_pushButton_clicked()
     else if (!password_is_valid.hasMatch())
         QMessageBox::warning(this, "Invalid password", "Your password must:\n  - include at least one letter, number and symbol.\n  - be at least 8 characters long.");
 }
+    return false;
 }
 void signup::encrypt(QString &string_encrypt)
 {

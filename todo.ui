@@ -123,17 +123,6 @@ color:#3d3397;</string>
            <height>473</height>
           </rect>
          </property>
-         <widget class="QWidget" name="gridLayoutWidget_2">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>401</width>
-            <height>471</height>
-           </rect>
-          </property>
-          <layout class="QGridLayout" name="not_started_2"/>
-         </widget>
         </widget>
        </widget>
       </item>
@@ -154,17 +143,6 @@ color:#3d3397;</string>
            <height>473</height>
           </rect>
          </property>
-         <widget class="QWidget" name="gridLayoutWidget_3">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>401</width>
-            <height>471</height>
-           </rect>
-          </property>
-          <layout class="QGridLayout" name="on_going_2"/>
-         </widget>
         </widget>
        </widget>
       </item>
@@ -185,17 +163,6 @@ color:#3d3397;</string>
            <height>473</height>
           </rect>
          </property>
-         <widget class="QWidget" name="gridLayoutWidget">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>401</width>
-            <height>471</height>
-           </rect>
-          </property>
-          <layout class="QGridLayout" name="completed_2"/>
-         </widget>
         </widget>
        </widget>
       </item>

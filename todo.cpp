@@ -14,6 +14,7 @@ todo::todo(QWidget *parent) :
     x.db_conn_open();
     load_not_started();
     load_in_progress();
+    load_completed();
 }
 
 todo::~todo()
@@ -45,30 +46,51 @@ void todo::on_pushButton_26_clicked()
 
 bool todo::on_pushButton_27_clicked()
 {
-     extern QString username;
-    QString table_name=username+"_not_started";
+    extern QString username;
+    QString table_name_not_started=username+"_not_started";
+    QString table_name_on_going=username+"_on_going";
+
     QString task=ui->task_adder->text();
     if(task=="")
     {
         QMessageBox::warning(this,"ERROR","Feilds cannot be empty");
         return true;
     }
-    QSqlQuery qry,check;
-    QString check1="Select * from '"+table_name+"' where taskname='"+task+"'";
-    if(check.exec(check1))
+    QSqlQuery qry,check1,check2;
+
+    QString check1_qry="Select * from '"+table_name_not_started+"' where taskname='"+task+"'";
+
+    QString check2_qry="Select * from '"+table_name_on_going+"' where taskname='"+task+"'";
+    if(check1.exec(check1_qry))
     {
-        int loop=0;
-         while (check.next())
+        int loop1=0;
+         while (check1.next())
         {
-                loop+=1;
+                loop1+=1;
         }
-         if(loop>=1)
+
+         if(loop1>=1)
          {
              QMessageBox::warning(this,"Similar task detected","Make sure you enter a different task");
              return false;
          }
     }
-    QString query="INSERT into  '"+table_name+"' (taskname) VALUES ('"+task+"')";
+    if(check2.exec(check2_qry))
+    {
+        int loop1=0;
+         while (check2.next())
+        {
+                loop1+=1;
+        }
+
+         if(loop1>=1)
+         {
+             QMessageBox::warning(this,"Similar task detected","Make sure you enter a different task");
+             return false;
+         }
+    }
+    repaint();
+    QString query="INSERT into  '"+table_name_not_started+"' (taskname) VALUES ('"+task+"')";
     qry.prepare(query);
     if(qry.exec())
     {
@@ -79,57 +101,8 @@ bool todo::on_pushButton_27_clicked()
         qDebug()<< qry.lastError().text();
         return true;
     }
-    pos1++;
-    QGridLayout* not_started = ui->not_started_2;
-    QWidget * widgets = new QWidget;
-    QScrollArea * area = ui->not_started;
-    widgets->setLayout(not_started);
-    area->setWidget(widgets);
-    QHBoxLayout* taskname = new (QHBoxLayout);
-    QLabel * title = new (QLabel);
-    QPushButton *details = new (QPushButton);
-
-    details->setText("Details");
-    title->setText(task);
-    taskname->addWidget(title,0);
-    taskname->addWidget(details,1);
-    title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
-    details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
-    not_started->addLayout(taskname,pos1,0);
     ui->task_adder->setText("");
-    connect(details,&QPushButton::clicked,[=](){
-        QString table_name_not_started=username+"_not_started";
-        QString table_name_on_going=username+"_on_going";
-        QSqlQuery delete_;
-        QString delete_qry="Delete from '"+table_name_not_started+"' where taskname='"+task+"'";
-        QSqlQuery insert;
-        QString insert_qry="INSERT INTO '"+table_name_on_going+"' (taskname) values ('"+task+"')";
-        if(delete_.exec(delete_qry))
-        {
-            qDebug()<<"Deleted my g";
-        }
-        else
-        {
-            qDebug()<<"NOt delered"+delete_.lastError().text();
-        }
-
-        if(insert.exec(insert_qry))
-        {
-            if(delete_.exec(delete_qry))
-            {
-                qDebug()<<"Insert";
-                pos1=0;
-                pos2=0;
-                load_not_started();
-                load_in_progress();
-            }
-        }
-                else
-        {
-                qDebug()<<"Not inserted";
-        }
-    });
-
+  load_not_started();
     return true;
 }
 
@@ -138,8 +111,8 @@ void todo::load_not_started()
     extern QString username;
     QString table_name=username+"_not_started";
     pos1++;
-    QGridLayout* not_started = ui->not_started_2;
-    QWidget * widgets = new QWidget;
+    QGridLayout* not_started =new QGridLayout(this);
+    QWidget * widgets = new QWidget(this);
     QScrollArea * area = ui->not_started;
     widgets->setLayout(not_started);
     area->setWidget(widgets);
@@ -152,10 +125,10 @@ void todo::load_not_started()
            while (get_data.next())
            {
                QString task=get_data.value(0).toString();
-               QHBoxLayout* taskname = new (QHBoxLayout);
-               QLabel * title = new (QLabel);
-               QPushButton *details = new (QPushButton);
-               details->setText("Details");
+               QHBoxLayout* taskname = new QHBoxLayout(this);
+               QLabel * title = new QLabel;
+               QPushButton *details = new QPushButton(this);
+               details->setText("Shift");
                QSize size= QSize(4,4);
                details->resize(size);
                title->setText(task);
@@ -165,9 +138,43 @@ void todo::load_not_started()
                details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
                not_started->addLayout(taskname,pos1,0);
                ui->task_adder->setText("");
+               connect(details,&QPushButton::clicked,[=](){
+                   QString table_name_not_started=username+"_not_started";
+                   QString table_name_on_going=username+"_on_going";
+                   QSqlQuery delete_;
+                   QString delete_qry="Delete from '"+table_name_not_started+"' where taskname='"+task+"'";
+                   QSqlQuery insert;
+                   QString insert_qry="INSERT INTO '"+table_name_on_going+"' (taskname) values ('"+task+"')";
+                   if(delete_.exec(delete_qry))
+                   {
+                       qDebug()<<"Deleted my g";
+                   }
+                   else
+                   {
+                       qDebug()<<"NOt delered"+delete_.lastError().text();
+                   }
+
+                   if(insert.exec(insert_qry))
+                   {
+                       if(delete_.exec(delete_qry))
+                       {
+                           qDebug()<<"Insert";
+                           pos1=0;
+                           pos2=0;
+                           load_not_started();
+                           load_in_progress();
+                           load_completed();
+                       }
+                   }
+                           else
+                   {
+                           qDebug()<<"Not inserted";
+                   }
+               });
                pos1+=1;
            }
     }
+
 
 }
 void todo::load_in_progress()
@@ -175,7 +182,7 @@ void todo::load_in_progress()
     extern QString username;
     QString table_name=username+"_on_going";
     pos2++;
-    QGridLayout* not_started = ui->on_going_2;
+    QGridLayout* not_started = new QGridLayout(this);
     QWidget * widgets = new QWidget;
     QScrollArea * area = ui->on_going;
     widgets->setLayout(not_started);
@@ -189,10 +196,10 @@ void todo::load_in_progress()
            while (get_data.next())
            {
                QString task=get_data.value(0).toString();
-               QHBoxLayout* taskname = new (QHBoxLayout);
-               QLabel * title = new (QLabel);
-               QPushButton *details = new (QPushButton);
-               details->setText("Details");
+               QHBoxLayout* taskname = new QHBoxLayout(this);
+               QLabel * title = new QLabel(this);
+               QPushButton *details = new QPushButton(this);
+               details->setText("Shift");
                QSize size= QSize(4,4);
                details->resize(size);
                title->setText(task);
@@ -202,21 +209,54 @@ void todo::load_in_progress()
                details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
                not_started->addLayout(taskname,pos2,0);
                ui->task_adder->setText("");
+               connect(details,&QPushButton::clicked,[=](){
+                   QString table_name_completed=username+"_completed";
+                   QString table_name_on_going=username+"_on_going";
+                   QSqlQuery delete_;
+                   QString delete_qry="Delete from '"+table_name_on_going+"' where taskname='"+task+"'";
+                   QSqlQuery insert;
+                   QString insert_qry="INSERT INTO '"+table_name_completed+"' (taskname) values ('"+task+"')";
+                   if(delete_.exec(delete_qry))
+                   {
+                       qDebug()<<"Deleted my g";
+                   }
+                   else
+                   {
+                       qDebug()<<"NOt delered"+delete_.lastError().text();
+                   }
+
+                   if(insert.exec(insert_qry))
+                   {
+                       if(delete_.exec(delete_qry))
+                       {
+                           qDebug()<<"Insert";
+                           pos1=0;
+                           pos2=0;
+                           load_not_started();
+                           load_in_progress();
+                           load_completed();
+                       }
+                   }
+                           else
+                   {
+                           qDebug()<<"Not inserted";
+                   }
+               });
                pos2+=1;
+                }
 }
-}
+    pos1=0;
+    pos2=0;
 }
 void todo:: load_completed()
 {
     extern QString username;
-    QString table_name=username+"_not_started";
-    pos1++;
-    QGridLayout* not_started = ui->completed_2;
-    QWidget * widgets = new QWidget;
-    QScrollArea * area = ui->not_started;
-    widgets->setLayout(not_started);
+    QString table_name=username+"_completed";
+    QGridLayout* completed = new QGridLayout(this);
+    QWidget * widgets = new QWidget(this);
+    QScrollArea * area = ui->completed;
+    widgets->setLayout(completed);
     area->setWidget(widgets);
-
     QSqlQuery get_data;
     QString qry="Select taskname from '"+table_name+"'";
     if(get_data.exec(qry))
@@ -225,23 +265,24 @@ void todo:: load_completed()
            while (get_data.next())
            {
                QString task=get_data.value(0).toString();
-               QHBoxLayout* taskname = new (QHBoxLayout);
-               QLabel * title = new (QLabel);
-               QPushButton *details = new (QPushButton);
+               QHBoxLayout* taskname = new QHBoxLayout(this);
+               QLabel * title = new QLabel(this);
+               QPushButton *details = new QPushButton(this);
                details->setStyleSheet("min-width: 150px;");
                QSize size= QSize(4,4);
+               details->setText("Delete");
                details->resize(size);
                title->setText(task);
                taskname->addWidget(title,0);
                taskname->addWidget(details,1);
                title->setStyleSheet("color:white;\nfont-size: 20px ;\nfont: bold large;");
                details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
-               not_started->addLayout(taskname,pos1,0);
+               completed->addLayout(taskname,pos3,0);
                ui->task_adder->setText("");
-               pos1+=1;
-               CONNECT();
+               pos3+=1;
 }
 }
+    pos3=0;
 }
 int todo:: pos1=0;
 int todo:: pos2=0;

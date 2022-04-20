@@ -33,7 +33,7 @@ void MainWindow::on_pushButton_login_3_clicked()
     QString password = ui->Password_3->text();
     encrypt(password);
     QSqlQuery qry;
-    if(qry.exec("Select * from HI where username= '"+username+"' and password1= '"+password+"'"))
+    if(qry.exec("Select * from users where username= '"+username+"' and password1= '"+password+"'"))
     {
         int count =0;
         while(qry.next())
@@ -73,7 +73,7 @@ void MainWindow:: db_conn_open()
             data.mkpath("C:/Db");
         }
         QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
-        info.setDatabaseName("/Users/bibhushansaakha/Desktop/final/MITRA/users.db");
+        info.setDatabaseName("C:/Db/users.db");
         info.open();
         if(!info.open())
         {
@@ -89,7 +89,7 @@ QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
 bool MainWindow :: setTable()
 {
     QSqlQuery table1;
-    QString qry="Create Table HI"
+    QString qry="Create Table users"
             "("
                 "full_name varchar(50),"
                 "nickname varchar(50),"

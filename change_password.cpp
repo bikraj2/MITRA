@@ -38,7 +38,7 @@ bool change_password::on_pushButton_clicked()
         encrypt(new_p);
         QSqlQuery change;
 
-        QString qry= "Update hi set password1 ='"+new_p+"' where username= '"+username2+"'";
+        QString qry= "Update users set password1 ='"+new_p+"' where username= '"+username2+"'";
         if (change.exec(qry))
         {
             QMessageBox::information(this,"Done","Your password is changed successfully");

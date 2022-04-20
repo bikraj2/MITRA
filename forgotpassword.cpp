@@ -24,7 +24,7 @@ void ForgotPassword::on_pushButton_clicked()
     DOB=ui->DOB->text();
     nickname=ui->Nickname->text();
     QSqlQuery forgot;
-    QString qry="Select * from  HI where username='"+username2+"'and DOB ='"+DOB+"' and nickname='"+nickname+"'";
+    QString qry="Select * from  users where username='"+username2+"'and DOB ='"+DOB+"' and nickname='"+nickname+"'";
     if (forgot.exec(qry))
     {
         int loop=0;
