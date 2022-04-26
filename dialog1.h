@@ -28,6 +28,7 @@ private slots:
     void on_logouticon_clicked();
 
     void on_pushButton_2_clicked();
+
     void on_pushButton_clicked();
 
 private:
@@ -35,7 +36,7 @@ private:
      Dialog2 *profilewindow;
      todo* todo1;
      notes * noteMaking;
-     music * studyMusic;
+     music * player;
 };
 
 #endif // DIALOG1_H

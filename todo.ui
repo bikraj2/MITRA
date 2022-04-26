@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1322</width>
-    <height>698</height>
+    <height>823</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -89,704 +89,141 @@ color:#3d3397;</string>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QFrame" name="frame_3">
-        <property name="styleSheet">
-         <string notr="true">background-color: #3d3397; border-radius:30;</string>
-        </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
-         <item>
-          <widget class="QFrame" name="frame_7">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
-            <item>
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>48</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_2">
-              <property name="autoFillBackground">
-               <bool>false</bool>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color:white;
-font-size: 24px ;
-font: bold large &quot;Sherif&quot;;</string>
-              </property>
-              <property name="text">
-               <string>Not Started</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_4">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>48</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_8">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_6">
-            <item>
-             <widget class="QFrame" name="frame_13">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_6">
-               <item>
-                <widget class="QFrame" name="frame_24">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_43">
-                  <item>
-                   <widget class="QLabel" name="label_14">
-                    <property name="styleSheet">
-                     <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>COMP 116</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_21">
-                    <property name="autoFillBackground">
-                     <bool>false</bool>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                    </property>
-                    <property name="text">
-                     <string>Details</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_14">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_7">
-               <item>
-                <widget class="QFrame" name="frame_23">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_10">
-                  <item>
-                   <widget class="QLabel" name="label_13">
-                    <property name="styleSheet">
-                     <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Javascript</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_22">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                    </property>
-                    <property name="text">
-                     <string>Details</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_31">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_15">
-               <item>
-                <widget class="QFrame" name="frame_59">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_9">
-                  <item>
-                   <widget class="QLabel" name="label_26">
-                    <property name="styleSheet">
-                     <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Quantum Comp</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_25">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                    </property>
-                    <property name="text">
-                     <string>Details</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_4">
+       <widget class="QScrollArea" name="not_started">
         <property name="styleSheet">
-         <string notr="true">background-color: #3d3397;border-radius:30;</string>
+         <string notr="true">background-color: #3d3397;border-radius:30;
+
+</string>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+        <property name="widgetResizable">
+         <bool>true</bool>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
-         <item>
-          <widget class="QFrame" name="frame_9">
-           <property name="styleSheet">
-            <string notr="true">color:white;
-font-size: 24px ;
-font: bold large &quot;Sherif&quot;;</string>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <item>
-             <spacer name="horizontalSpacer_5">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>88</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_3">
-              <property name="styleSheet">
-               <string notr="true">color:white;
-font-size: 24px ;
-font: bold large &quot;Sherif&quot;;</string>
-              </property>
-              <property name="text">
-               <string>In Progress</string>
-              </property>
-              <property name="textFormat">
-               <enum>Qt::RichText</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_6">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>88</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_17">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_21">
-            <item>
-             <widget class="QLabel" name="label_20">
-              <property name="styleSheet">
-               <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-              </property>
-              <property name="text">
-               <string>Waiting for 
- you to start</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_29">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_22">
-               <item>
-                <widget class="QPushButton" name="pushButton_37">
-                 <property name="styleSheet">
-                  <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                 </property>
-                 <property name="text">
-                  <string>Details</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_10">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_7">
-            <item>
-             <widget class="QFrame" name="frame_15">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_8">
-               <item>
-                <widget class="QLabel" name="label_15">
-                 <property name="styleSheet">
-                  <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Waiting for 
- you to start</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QFrame" name="frame_22">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_11">
-                  <item>
-                   <widget class="QPushButton" name="pushButton_29">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                    </property>
-                    <property name="text">
-                     <string>Details</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_16">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_14">
-               <item>
-                <widget class="QLabel" name="label_17">
-                 <property name="styleSheet">
-                  <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Waiting for 
- you to start</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QFrame" name="frame_26">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_16">
-                  <item>
-                   <widget class="QPushButton" name="pushButton_31">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                    </property>
-                    <property name="text">
-                     <string>Details</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="scrollAreaWidgetContents_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>416</width>
+           <height>473</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_5">
+       <widget class="QScrollArea" name="on_going">
         <property name="styleSheet">
          <string notr="true">background-color: #3d3397;border-radius:30;</string>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+        <property name="widgetResizable">
+         <bool>true</bool>
         </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
-         <item>
-          <widget class="QFrame" name="frame_11">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <item>
-             <spacer name="horizontalSpacer_7">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>50</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_4">
-              <property name="styleSheet">
-               <string notr="true">color:white;
-font-size: 24px ;
-font: bold large &quot;Sherif&quot;;</string>
-              </property>
-              <property name="text">
-               <string>Completed</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_8">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>50</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_12">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_8">
-            <item>
-             <widget class="QFrame" name="frame_62">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_44">
-               <item>
-                <widget class="QFrame" name="frame_63">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_45">
-                  <item>
-                   <widget class="QLabel" name="label_28">
-                    <property name="styleSheet">
-                     <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Waiting for 
- you to start</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_33">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                    </property>
-                    <property name="text">
-                     <string>Details</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_64">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_46">
-               <item>
-                <widget class="QFrame" name="frame_65">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_47">
-                  <item>
-                   <widget class="QLabel" name="label_29">
-                    <property name="styleSheet">
-                     <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Waiting for 
- you to start</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_34">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                    </property>
-                    <property name="text">
-                     <string>Details</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item>
-             <widget class="QFrame" name="frame_66">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_48">
-               <item>
-                <widget class="QFrame" name="frame_67">
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <layout class="QHBoxLayout" name="horizontalLayout_49">
-                  <item>
-                   <widget class="QLabel" name="label_30">
-                    <property name="styleSheet">
-                     <string notr="true">color:white;
-font-size: 20px ;
-font: bold large &quot;Sherif&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>Waiting for 
- you to start</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_35">
-                    <property name="styleSheet">
-                     <string notr="true">background-color: #dfb06a;
-color:#3d3397;
-font: bold 20px,  &quot;Sherif&quot; ; 
-border-width: 5px;
-border-radius: 15px; padding:6;</string>
-                    </property>
-                    <property name="text">
-                     <string>Details</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="scrollAreaWidgetContents_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>415</width>
+           <height>473</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
+      </item>
+      <item>
+       <widget class="QScrollArea" name="completed">
+        <property name="styleSheet">
+         <string notr="true">background-color: #3d3397;border-radius:30;</string>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>416</width>
+           <height>473</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="test1">
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_19">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_13">
+      <item>
+       <spacer name="horizontalSpacer_12">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>534</width>
+          <height>58</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="task_adder">
+        <property name="styleSheet">
+         <string notr="true">background-color:white; padding:7; border-radius:10; color:#2f455c; font: bold &quot;Sherif&quot;;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_27">
+        <property name="styleSheet">
+         <string notr="true">background-color: #dfb06a;
+color:#3d3397;
+font: bold 20px,  &quot;Sherif&quot; ; 
+border-width: 5px;
+border-radius: 15px; padding:10; padding-left:35;padding-right:35;</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_11">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>534</width>
+          <height>58</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>
@@ -799,26 +236,60 @@ border-radius: 15px; padding:6;</string>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="pushButton_26">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>40</y>
-        <width>173</width>
-        <height>36</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #dfb06a;
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QFrame" name="frame_18">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <spacer name="horizontalSpacer_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_26">
+           <property name="styleSheet">
+            <string notr="true">background-color: #dfb06a;
 color:#3d3397;
 font: bold 20px,  &quot;Sherif&quot; ; 
 border-width: 5px;
-border-radius: 15px; padding:6;</string>
-      </property>
-      <property name="text">
-       <string>Close</string>
-      </property>
-     </widget>
+border-radius: 15px; padding:10; padding-left:35;padding-right:35;</string>
+           </property>
+           <property name="text">
+            <string>Close</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_10">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

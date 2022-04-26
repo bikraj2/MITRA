@@ -5,6 +5,7 @@
         <file>icon/maintenance.png</file>
         <file>icon/music.jpg</file>
         <file>icon/notes.jpg</file>
+        <file>icon/pomodoro.jpg</file>
         <file>icon/profile.jpg</file>
         <file>icon/schedule.jpg</file>
         <file>icon/1.png</file>
@@ -27,19 +28,11 @@
         <file>icon/forward.png</file>
         <file>icon/Play.png</file>
         <file>icon/logo.png</file>
-        <file>icon/ptimer.jpg</file>
+        <file>icon/user_icon.png</file>
     </qresource>
     <qresource prefix="/new/prefix1"/>
     <qresource prefix="/database">
         <file>heyy.db</file>
     </qresource>
     <qresource prefix="/"/>
-    <qresource prefix="/music_icon">
-        <file>icon/Play.png</file>
-        <file>icon/forward.png</file>
-        <file>icon/backward.png</file>
-        <file>icon/pause.png</file>
-        <file>icon/undo_music.png</file>
-        <file>icon/pomodoro.png</file>
-    </qresource>
 </RCC>

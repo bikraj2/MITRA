@@ -13,6 +13,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    db_conn_open();
+
     setTable();
 
 }
@@ -21,16 +24,16 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+
 void MainWindow::on_pushButton_login_3_clicked()
 {
-    MainWindow conn;
-    username = ui->username_3->text();
+ username = ui->username_3->text();
     QString password = ui->Password_3->text();
     encrypt(password);
-    connOpen();
     QSqlQuery qry;
-    qry.prepare("Select * from HI where username= '"+username+"' and password1= '"+password+"'");
-    if(qry.exec())
+    if(qry.exec("Select * from users where username= '"+username+"' and password1= '"+password+"'"))
     {
         int count =0;
         while(qry.next())
@@ -54,7 +57,6 @@ void MainWindow::on_pushButton_login_3_clicked()
     {
         QMessageBox:: warning(this,"hey",qry.lastError().text());
     }
-    connClose();
 }
 void MainWindow::on_pushButton_singup_3_clicked()
 {
@@ -62,20 +64,66 @@ void MainWindow::on_pushButton_singup_3_clicked()
     register1 =  new signup(this);
     register1->show();
 }
-bool MainWindow :: setTable()
+void MainWindow:: db_conn_open()
 {
 
+    QDir data("C:/Db");
+        if (!data.exists())
+        {
+            data.mkpath("C:/Db");
+        }
+        QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
+        info.setDatabaseName("C:/Db/users.db");
+        info.open();
+        if(!info.open())
+        {
+            qDebug() << "hey sorry";
+        }
+
+}
+void MainWindow:: db_conn_close()
+{
+info.close();
+QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
+}
+bool MainWindow :: setTable()
+{
     QSqlQuery table1;
-    QString qry="Create Table HI"
+    QSqlQuery not_started,on_going,completed;
+    QString qry="Create Table users"
             "("
                 "full_name varchar(50),"
-                "nickname varchar(50),"
-                "username varchar(50),"
+                "nickname varchar(50) ,"
+                "username varchar(50) PRIMARY KEY,"
                 "password1 varchar(50),"
                 "DOB date"
             ");";
-    if (table1.exec(qry))
-        return true;
+    table1.exec(qry);
+        QString not_started_qry="Create Table not_started (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))",on_going_qry="Create Table on_going (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))",completed_qry="Create Table completed (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))";
+        if(not_started.exec(not_started_qry))
+        {
+            qDebug()<<"DOne";
+        }
+        else
+        {
+            qDebug()<<not_started.lastError().text();
+        }
+        if(on_going.exec(on_going_qry))
+        {
+            qDebug()<<"ongoing created";
+        }
+        else
+        {
+            qDebug()<<on_going.lastError().text();
+        }
+        if(completed.exec(completed_qry))
+        {
+            qDebug()<<"completed created";
+        }
+        else
+        {
+            qDebug()<<completed.lastError().text();
+        }
     return false;
 }
 void MainWindow::encrypt(QString &string_encrypt){

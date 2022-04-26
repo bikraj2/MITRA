@@ -42,9 +42,12 @@ void Dialog1::on_pushButton_2_clicked()
     noteMaking = new notes(this);
     noteMaking->show();
 }
+
+
 void Dialog1::on_pushButton_clicked()
 {
+    player = new music(this);
     hide();
-    studyMusic  = new music(this);
-    studyMusic->show();
+    player->show();
 }
+

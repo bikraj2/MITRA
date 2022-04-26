@@ -2,7 +2,6 @@
 #include "ui_change_password.h"
 #include<QtSql>
 #include<QMessageBox>
-#include"mainwindow.h"
 change_password::change_password(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::change_password)
@@ -18,8 +17,7 @@ change_password::~change_password()
 
 bool change_password::on_pushButton_clicked()
 {
-    MainWindow conn;
-    conn.connOpen();
+
     extern QString  username2,DOB,nickname;
     QString new_p,confirm_p;
     new_p=ui->new_p->text();
@@ -40,7 +38,7 @@ bool change_password::on_pushButton_clicked()
         encrypt(new_p);
         QSqlQuery change;
 
-        QString qry= "Update hi set password1 ='"+new_p+"' where username= '"+username2+"'";
+        QString qry= "Update users set password1 ='"+new_p+"' where username= '"+username2+"'";
         if (change.exec(qry))
         {
             QMessageBox::information(this,"Done","Your password is changed successfully");
@@ -57,7 +55,6 @@ bool change_password::on_pushButton_clicked()
     {
         QMessageBox::warning(this,"Invalid Password","Your password must: \n include a letter,symbol and a number\n be at least 8 character long");
     }
-    conn.connClose();
 }
 void change_password :: encrypt(QString &string_encrypt)
 {
