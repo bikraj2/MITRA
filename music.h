@@ -10,7 +10,9 @@
 #include<QToolButton>
 #include<QStyle>
 #include<QSlider>
-
+#include<QMessageBox>
+#include<QTimer>
+#include<QFont>
 
 QT_BEGIN_NAMESPACE
 class QMediaPlayer;
@@ -33,15 +35,17 @@ public:
     ~music();
 
     float volume();
+    int millisecond,  minute , second =0;
 public slots:
 
-    void setState(QMediaPlayer::PlaybackState state);
+    //void setState(QMediaPlayer::PlaybackState state);
+    QString intToQString(int num);
 
 signals:
     void play();
-    void pause();
-
-    void stop();
+   // void pause();
+    //void start();
+   // void stop();
     void next();
     void previous();
 
@@ -70,11 +74,19 @@ private slots:
 
 
 
-    void playClicked();
+    //void playClicked();
 
 
-    void on_timerButton_clicked();
+    //void on_timerButton_clicked();
     void  on_nextButton_clicked();
+
+    void on_pushButton1_clicked();
+    void changeTime();
+
+    void on_pushButton2_clicked();
+    void start();
+     void stop();
+    void reset();
 
 private:
 
@@ -82,16 +94,17 @@ private:
     Ui::music *ui;
     QMediaPlayer *player;
     QAudioOutput *audio;
-    timer *timerwindow;
-    QAbstractSlider *sliderVolume = nullptr;
-    QAbstractButton *playButton = nullptr;
-    QAbstractButton *stopButton = nullptr;
-    QAbstractButton *nextButton = nullptr;
-    QAbstractButton *previousButton = nullptr;
-    QAbstractButton *muteButton = nullptr;
-    QMediaPlayer::PlaybackState playerState = QMediaPlayer::StoppedState;
-    QMediaPlaylist *playlist = nullptr;
+    //timer *timerwindow;
+   // QAbstractSlider *sliderVolume = nullptr;
+    //QAbstractButton *playButton = nullptr;
+   //QAbstractButton *stopButton = nullptr;
+    //QAbstractButton *nextButton = nullptr;
+    //QAbstractButton *previousButton = nullptr;
+    //QAbstractButton *muteButton = nullptr;
+    //QMediaPlayer::PlaybackState playerState = QMediaPlayer::StoppedState;
+    //QMediaPlaylist *playlist = nullptr;
 
+    QTimer * timer1;
 
 
 };
