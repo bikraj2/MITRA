@@ -89,16 +89,41 @@ QSqlDatabase info  =  QSqlDatabase::addDatabase("QSQLITE");
 bool MainWindow :: setTable()
 {
     QSqlQuery table1;
+    QSqlQuery not_started,on_going,completed;
     QString qry="Create Table users"
             "("
                 "full_name varchar(50),"
-                "nickname varchar(50),"
+                "nickname varchar(50) PRIMARY KEY,"
                 "username varchar(50),"
                 "password1 varchar(50),"
                 "DOB date"
             ");";
-    if (table1.exec(qry))
-        return true;
+    table1.exec(qry);
+        QString not_started_qry="Create Table not_started (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))",on_going_qry="Create Table on_going (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))",completed_qry="Create Table completed (username varchar (50)  ,taskname varchar(100),FOREIGN KEY (username) references users(username))";
+        if(not_started.exec(not_started_qry))
+        {
+            qDebug()<<"DOne";
+        }
+        else
+        {
+            qDebug()<<not_started.lastError().text();
+        }
+        if(on_going.exec(on_going_qry))
+        {
+            qDebug()<<"ongoing created";
+        }
+        else
+        {
+            qDebug()<<on_going.lastError().text();
+        }
+        if(completed.exec(completed_qry))
+        {
+            qDebug()<<"completed created";
+        }
+        else
+        {
+            qDebug()<<completed.lastError().text();
+        }
     return false;
 }
 void MainWindow::encrypt(QString &string_encrypt){

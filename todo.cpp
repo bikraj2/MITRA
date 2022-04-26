@@ -47,8 +47,7 @@ void todo::on_pushButton_26_clicked()
 bool todo::on_pushButton_27_clicked()
 {
     extern QString username;
-    QString table_name_not_started=username+"_not_started";
-    QString table_name_on_going=username+"_on_going";
+
 
     QString task=ui->task_adder->text();
     if(task=="")
@@ -58,9 +57,9 @@ bool todo::on_pushButton_27_clicked()
     }
     QSqlQuery qry,check1,check2;
 
-    QString check1_qry="Select * from '"+table_name_not_started+"' where taskname='"+task+"'";
+    QString check1_qry="Select * from not_started where username = '"+username+" and 'taskname='"+task+"'";
 
-    QString check2_qry="Select * from '"+table_name_on_going+"' where taskname='"+task+"'";
+    QString check2_qry="Select * from on_going where username = '"+username+" and 'taskname='"+task+"'";
     if(check1.exec(check1_qry))
     {
         int loop1=0;
@@ -90,7 +89,7 @@ bool todo::on_pushButton_27_clicked()
          }
     }
     repaint();
-    QString query="INSERT into  '"+table_name_not_started+"' (taskname) VALUES ('"+task+"')";
+    QString query="INSERT into  not_started (taskname,username) VALUES ('"+task+"','"+username+"')";
     qry.prepare(query);
     if(qry.exec())
     {
@@ -109,7 +108,7 @@ bool todo::on_pushButton_27_clicked()
 void todo::load_not_started()
 {
     extern QString username;
-    QString table_name=username+"_not_started";
+
     pos1++;
     QGridLayout* not_started =new QGridLayout(this);
     QWidget * widgets = new QWidget(this);
@@ -118,7 +117,7 @@ void todo::load_not_started()
     area->setWidget(widgets);
 
     QSqlQuery get_data;
-    QString qry="Select taskname from '"+table_name+"'";
+    QString qry="Select taskname from not_started where username ='"+username+"'";
     if(get_data.exec(qry))
     {
 
@@ -139,12 +138,11 @@ void todo::load_not_started()
                not_started->addLayout(taskname,pos1,0);
                ui->task_adder->setText("");
                connect(details,&QPushButton::clicked,[=](){
-                   QString table_name_not_started=username+"_not_started";
-                   QString table_name_on_going=username+"_on_going";
+
                    QSqlQuery delete_;
-                   QString delete_qry="Delete from '"+table_name_not_started+"' where taskname='"+task+"'";
+                   QString delete_qry="Delete from not_started where taskname='"+task+"' and username = '"+username+"'";
                    QSqlQuery insert;
-                   QString insert_qry="INSERT INTO '"+table_name_on_going+"' (taskname) values ('"+task+"')";
+                   QString insert_qry="INSERT INTO on_going (taskname,username) values ('"+task+"','"+username+"')";
                    if(delete_.exec(delete_qry))
                    {
                        qDebug()<<"Deleted my g";
@@ -189,7 +187,7 @@ void todo::load_in_progress()
     area->setWidget(widgets);
 
     QSqlQuery get_data;
-    QString qry="Select taskname from '"+table_name+"'";
+    QString qry="Select taskname from on_going where username = '"+username+"'";
     if(get_data.exec(qry))
     {
 
@@ -210,12 +208,11 @@ void todo::load_in_progress()
                not_started->addLayout(taskname,pos2,0);
                ui->task_adder->setText("");
                connect(details,&QPushButton::clicked,[=](){
-                   QString table_name_completed=username+"_completed";
-                   QString table_name_on_going=username+"_on_going";
+
                    QSqlQuery delete_;
-                   QString delete_qry="Delete from '"+table_name_on_going+"' where taskname='"+task+"'";
+                   QString delete_qry="Delete from on_going where taskname='"+task+"' and username ='"+username+"'";
                    QSqlQuery insert;
-                   QString insert_qry="INSERT INTO '"+table_name_completed+"' (taskname) values ('"+task+"')";
+                   QString insert_qry="INSERT INTO completed (taskname,username) values ('"+task+"','"+username+"')";
                    if(delete_.exec(delete_qry))
                    {
                        qDebug()<<"Deleted my g";
@@ -251,14 +248,14 @@ void todo::load_in_progress()
 void todo:: load_completed()
 {
     extern QString username;
-    QString table_name=username+"_completed";
+
     QGridLayout* completed = new QGridLayout(this);
     QWidget * widgets = new QWidget(this);
     QScrollArea * area = ui->completed;
     widgets->setLayout(completed);
     area->setWidget(widgets);
     QSqlQuery get_data;
-    QString qry="Select taskname from '"+table_name+"'";
+    QString qry="Select taskname from completed where username='"+username+"'";
     if(get_data.exec(qry))
     {
 
@@ -279,10 +276,42 @@ void todo:: load_completed()
                details->setStyleSheet("background-color: #dfb06a;\ncolor:#3d3397;\nfont: bold 20px ; \nborder-width: 5px;\nborder-radius: 15px; padding:6;");
                completed->addLayout(taskname,pos3,0);
                ui->task_adder->setText("");
+               connect(details,&QPushButton::clicked,[=](){
+
+                   QSqlQuery delete_;
+                   QString delete_qry="Delete from completed where taskname='"+task+"' and username ='"+username+"'";
+
+                   if(delete_.exec(delete_qry))
+                   {
+                       qDebug()<<"Deleted my g";
+                   }
+                   else
+                   {
+                       qDebug()<<"NOt delered"+delete_.lastError().text();
+                   }
+
+
+                       if(delete_.exec(delete_qry))
+                       {
+                           qDebug()<<"Insert";
+                           pos1=0;
+                           pos2=0;
+                           pos3=0;
+                           load_not_started();
+                           load_in_progress();
+                           load_completed();
+                       }
+
+
+               });
                pos3+=1;
-}
-}
+                }
+
+
+    pos1=0;
+    pos2=0;
     pos3=0;
+}
 }
 int todo:: pos1=0;
 int todo:: pos2=0;

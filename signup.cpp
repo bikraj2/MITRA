@@ -27,6 +27,7 @@ bool signup::on_pushButton_clicked()
     if(full_name=="" || nickname ==""||username==""||password==""||date=="")
     {
         QMessageBox::warning(this,"Incomplete information","Make sure you have entered all the fields.");
+        return true;
 
     }
     QRegularExpression username_pattern("^[a-zA-Z0-9_-]{5,10}$");//only includes alphabets or digits or underscore or hyphen; 5 to 10 characters
@@ -42,6 +43,7 @@ bool signup::on_pushButton_clicked()
             int loop=0;
             while (qry1.next())
             {
+
                 loop+=1;
 
             }
@@ -52,16 +54,13 @@ bool signup::on_pushButton_clicked()
             }
         }
         encrypt(password);
-        QSqlQuery qry,not_started,on_going,completed;
+        QSqlQuery  qry;
         qry.prepare("Insert into users (full_name,nickname,username,password1,DOB) values('"+full_name+"','"+nickname+"','"+username+"','"+password+"','"+date+"')");
         if(qry.exec())
         {
 
 
-            QString not_started_qry="Create Table '"+username+"_not_started'(taskname varchar(100))",on_going_qry="Create Table '"+username+"_on_going'(taskname varchar(100))",completed_qry="Create Table '"+username+"_completed' (taskname varchar(100))";
-            not_started.exec(not_started_qry);
-            on_going.exec(on_going_qry);
-            completed.exec(completed_qry);
+
             QMessageBox::information(this,"User Registered","You have been registered.");
             this->hide();
             QWidget *parent = this->parentWidget();
@@ -70,11 +69,15 @@ bool signup::on_pushButton_clicked()
     }
     else{
     if (!username_is_valid.hasMatch() && !password_is_valid.hasMatch())
-        QMessageBox::warning(this, "Invalid username and password", "Your username:\n  - may include letters, numbers, underscore or hyphen.\n  - needs to include 5 to 10 characters.\n\nYour password must :\n  - include at least one letter, number and symbol.\n  - be at least 8 characters long.");
+    {QMessageBox::warning(this, "Invalid username and password", "Your username:\n  - may include letters, numbers, underscore or hyphen.\n  - needs to include 5 to 10 characters.\n\nYour password must :\n  - include at least one letter, number and symbol.\n  - be at least 8 characters long.");
+    }
     else if (!username_is_valid.hasMatch())
-        QMessageBox::warning(this, "Invalid username", "Your username:\n  - may include letters, numbers, underscore or hyphen.\n  - needs to include 5 to 10 characters.");
+    {QMessageBox::warning(this, "Invalid username", "Your username:\n  - may include letters, numbers, underscore or hyphen.\n  - needs to include 5 to 10 characters.");
+    ;
+    }
     else if (!password_is_valid.hasMatch())
-        QMessageBox::warning(this, "Invalid password", "Your password must:\n  - include at least one letter, number and symbol.\n  - be at least 8 characters long.");
+    {QMessageBox::warning(this, "Invalid password", "Your password must:\n  - include at least one letter, number and symbol.\n  - be at least 8 characters long.");
+    }
 }
     return false;
 }
@@ -83,7 +86,7 @@ void signup::encrypt(QString &string_encrypt)
 
     QString p_text = string_encrypt;
     int k=598658, value,ascii;
-
+qDebug()<<"DOne";
     for (int i = 0; i < p_text.size(); i++)
     {
         ascii = (p_text[i]).QChar::unicode();
